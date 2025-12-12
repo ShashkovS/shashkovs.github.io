@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Diwali (Deepavali) is the Festival of Lights—learn its meaning, traditions, foods, and ways to celebrate thoughtfully."
+    />
+    <title>Diwali — Festival of Lights</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #0b0b10;
+        --card: rgba(255, 255, 255, 0.06);
+        --text: rgba(255, 255, 255, 0.92);
+        --muted: rgba(255, 255, 255, 0.7);
+        --line: rgba(255, 255, 255, 0.12);
+        --shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
+        --accent: #ffd166;
+        --accent2: #ff6b6b;
+        --accent3: #4cc9f0;
+        --radius: 16px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
+          "Apple Color Emoji", "Segoe UI Emoji";
+        background: radial-gradient(1200px 700px at 10% 0%, rgba(255, 209, 102, 0.18), transparent 60%),
+          radial-gradient(900px 600px at 90% 15%, rgba(76, 201, 240, 0.16), transparent 55%),
+          radial-gradient(1000px 700px at 40% 105%, rgba(255, 107, 107, 0.12), transparent 55%), var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .skip {
+        position: absolute;
+        left: -9999px;
+        top: 8px;
+        padding: 10px 12px;
+        background: #111827;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        z-index: 10;
+      }
+      .skip:focus {
+        left: 12px;
+      }
+
+      header {
+        padding: 48px 18px 22px;
+      }
+
+      .wrap {
+        max-width: 1020px;
+        margin: 0 auto;
+      }
+
+      .hero {
+        border: 1px solid var(--line);
+        border-radius: calc(var(--radius) + 8px);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+        background: linear-gradient(135deg, rgba(255, 209, 102, 0.12), rgba(76, 201, 240, 0.06));
+      }
+
+      .hero-inner {
+        padding: 28px 22px 18px;
+        display: grid;
+        gap: 14px;
+      }
+
+      .kicker {
+        display: inline-flex;
+        gap: 10px;
+        align-items: center;
+        padding: 7px 11px;
+        width: fit-content;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: rgba(0, 0, 0, 0.12);
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: conic-gradient(from 0deg, var(--accent), var(--accent2), var(--accent3), var(--accent));
+        box-shadow: 0 0 20px rgba(255, 209, 102, 0.25);
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(30px, 4vw, 44px);
+        letter-spacing: -0.02em;
+        line-height: 1.15;
+      }
+
+      .subtitle {
+        margin: 0;
+        color: var(--muted);
+        font-size: clamp(16px, 1.7vw, 18px);
+        max-width: 68ch;
+      }
+
+      nav {
+        padding: 12px 18px 18px;
+        border-top: 1px solid var(--line);
+        background: rgba(0, 0, 0, 0.18);
+      }
+
+      .nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 9px 11px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.05);
+        color: var(--muted);
+        font-size: 14px;
+        transition: transform 120ms ease, background 120ms ease, color 120ms ease;
+      }
+      .pill:hover,
+      .pill:focus-visible {
+        transform: translateY(-1px);
+        background: rgba(255, 255, 255, 0.09);
+        color: var(--text);
+        outline: none;
+      }
+
+      main {
+        padding: 10px 18px 64px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 16px;
+        align-items: start;
+      }
+
+      @media (max-width: 880px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      section {
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: var(--card);
+        padding: 18px 18px 14px;
+      }
+
+      h2 {
+        margin: 0 0 8px;
+        font-size: 18px;
+        letter-spacing: -0.01em;
+      }
+
+      p {
+        margin: 0 0 10px;
+        color: var(--muted);
+      }
+
+      .callout {
+        border-radius: 14px;
+        border: 1px dashed rgba(255, 209, 102, 0.35);
+        background: rgba(255, 209, 102, 0.08);
+        padding: 12px 12px;
+        color: rgba(255, 255, 255, 0.82);
+      }
+
+      .list {
+        margin: 10px 0 0;
+        padding: 0 0 0 18px;
+        color: var(--muted);
+      }
+
+      .cards {
+        display: grid;
+        gap: 12px;
+      }
+
+      .mini {
+        border-radius: 14px;
+        border: 1px solid var(--line);
+        background: rgba(0, 0, 0, 0.12);
+        padding: 14px 14px 12px;
+      }
+
+      .mini h3 {
+        margin: 0 0 6px;
+        font-size: 15px;
+        letter-spacing: -0.01em;
+      }
+
+      .mini p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      details {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: rgba(0, 0, 0, 0.12);
+        padding: 12px 12px;
+      }
+
+      details + details {
+        margin-top: 10px;
+      }
+
+      summary {
+        cursor: pointer;
+        color: rgba(255, 255, 255, 0.9);
+        font-weight: 600;
+        list-style: none;
+      }
+      summary::-webkit-details-marker {
+        display: none;
+      }
+
+      footer {
+        padding: 18px 18px 40px;
+        color: rgba(255, 255, 255, 0.55);
+        font-size: 13px;
+      }
+
+      .footer-card {
+        max-width: 1020px;
+        margin: 0 auto;
+        border-top: 1px solid var(--line);
+        padding-top: 16px;
+      }
+
+      .kbd {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+          monospace;
+        font-size: 12px;
+        padding: 2px 6px;
+        border-radius: 8px;
+        border: 1px solid var(--line);
+        background: rgba(0, 0, 0, 0.18);
+        color: rgba(255, 255, 255, 0.75);
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip" href="#content">Skip to content</a>
+
+    <header class="wrap">
+      <div class="hero" role="banner" aria-label="Diwali page header">
+        <div class="hero-inner">
+          <div class="kicker"><span class="dot" aria-hidden="true"></span>Diwali (Deepavali) — Festival of Lights</div>
+          <h1>Light, hope, and new beginnings</h1>
+          <p class="subtitle">
+            Diwali is one of the most widely celebrated festivals in India and across the world. It is known for
+            glowing oil lamps (diyas), colorful rangoli, family gatherings, festive sweets, and the symbolism of
+            light overcoming darkness.
+          </p>
+          <div class="callout" role="note" aria-label="Quick greeting">
+            A common greeting is <strong>“Happy Diwali!”</strong> or <strong>“Shubh Diwali”</strong>—wishing joy,
+            prosperity, and peace.
+          </div>
+        </div>
+        <nav aria-label="Page sections">
+          <ul class="nav">
+            <li><a class="pill" href="#what">What it is</a></li>
+            <li><a class="pill" href="#meaning">Meaning</a></li>
+            <li><a class="pill" href="#days">The five days</a></li>
+            <li><a class="pill" href="#traditions">Traditions</a></li>
+            <li><a class="pill" href="#food">Food & sweets</a></li>
+            <li><a class="pill" href="#celebrate">Celebrate kindly</a></li>
+            <li><a class="pill" href="#faq">FAQ</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="content" class="wrap" role="main">
+      <div class="grid">
+        <div class="cards" aria-label="Main content">
+          <section id="what">
+            <h2>What is Diwali?</h2>
+            <p>
+              Diwali (also spelled <em>Deepavali</em>) is a major festival celebrated by Hindus, Jains, Sikhs, and
+              many Buddhists, along with people of other backgrounds who enjoy its spirit of togetherness. The
+              festival typically falls in October or November and is based on the lunar calendar.
+            </p>
+            <p>
+              The name “Deepavali” comes from Sanskrit words that mean “a row of lamps.” Homes and streets are lit
+              with diyas, candles, and decorative lights to create a warm, welcoming glow.
+            </p>
+          </section>
+
+          <section id="meaning">
+            <h2>Meaning and symbolism</h2>
+            <p>
+              While traditions vary by region and community, Diwali is widely seen as a celebration of
+              <strong>light over darkness</strong>, <strong>knowledge over ignorance</strong>, and
+              <strong>good over evil</strong>.
+            </p>
+            <ul class="list">
+              <li><strong>Diyas and lights:</strong> hope, clarity, and protection.</li>
+              <li><strong>Cleaning and decorating:</strong> preparing for a fresh start.</li>
+              <li><strong>Sharing sweets and gifts:</strong> gratitude and community.</li>
+              <li><strong>Prayers:</strong> seeking well-being, prosperity, and peace.</li>
+            </ul>
+            <p>
+              In many Hindu traditions, Diwali is associated with the return of Lord Rama to Ayodhya, and with
+              Lakshmi Puja—welcoming the goddess Lakshmi, a symbol of prosperity and good fortune. In Jain
+              traditions, it commemorates Mahavira’s attainment of nirvana. Sikhs celebrate Bandi Chhor Divas,
+              marking the release of Guru Hargobind Ji and other prisoners.
+            </p>
+          </section>
+
+          <section id="days">
+            <h2>The five days of Diwali (common structure)</h2>
+            <p>
+              In many places, Diwali is celebrated over five days. Names and customs can vary, but the flow often
+              looks like this:
+            </p>
+            <ul class="list">
+              <li><strong>Dhanteras:</strong> cleaning, shopping, and honoring health and prosperity.</li>
+              <li><strong>Naraka Chaturdashi (Chhoti Diwali):</strong> early lights, preparations, and family time.</li>
+              <li><strong>Diwali / Lakshmi Puja:</strong> prayer, diyas, sweets, and celebrations.</li>
+              <li><strong>Govardhan Puja / Annakut:</strong> gratitude, sharing meals, community offerings.</li>
+              <li><strong>Bhai Dooj:</strong> celebrating sibling bonds and care.</li>
+            </ul>
+          </section>
+
+          <section id="traditions">
+            <h2>Traditions you might see</h2>
+            <p>
+              Diwali is both festive and meaningful—some people focus on worship and quiet family rituals, while
+              others emphasize parties, music, and bright decorations.
+            </p>
+            <div class="cards" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); display: grid">
+              <div class="mini">
+                <h3>Rangoli</h3>
+                <p>Colorful floor art made with powders, flowers, or rice—often at the entrance to welcome guests.</p>
+              </div>
+              <div class="mini">
+                <h3>Diyas & lanterns</h3>
+                <p>Small oil lamps and paper lanterns symbolize light, warmth, and new beginnings.</p>
+              </div>
+              <div class="mini">
+                <h3>New clothes</h3>
+                <p>Many wear festive outfits to mark the occasion and to honor the holiday’s joyful spirit.</p>
+              </div>
+              <div class="mini">
+                <h3>Sharing & charity</h3>
+                <p>Visiting friends, exchanging sweets, and helping neighbors are central to the celebration.</p>
+              </div>
+            </div>
+            <p class="callout" role="note" aria-label="Tip">
+              Tip: If you’re attending a Diwali celebration for the first time, a thoughtful gesture is to bring a
+              box of sweets, flowers, or a simple card with a warm greeting.
+            </p>
+          </section>
+
+          <section id="food">
+            <h2>Food and sweets</h2>
+            <p>
+              Food is a big part of Diwali. Families often prepare special dishes and share sweets with friends and
+              neighbors. Favorites differ by region, but common treats include:
+            </p>
+            <ul class="list">
+              <li><strong>Ladoo</strong> (round sweets made from flour/semolina, ghee, and sugar)</li>
+              <li><strong>Barfi</strong> (fudge-like squares, often with nuts)</li>
+              <li><strong>Jalebi</strong> (crispy spirals soaked in syrup)</li>
+              <li><strong>Kaju katli</strong> (cashew-based sweet with a delicate texture)</li>
+            </ul>
+            <p>
+              Many celebrations also include savory snacks, festive thalis, and meals shared with guests—because
+              generosity is part of the joy.
+            </p>
+          </section>
+
+          <section id="celebrate">
+            <h2>Celebrate kindly (and safely)</h2>
+            <p>
+              Diwali is at its best when it feels welcoming to everyone—neighbors, pets, and the environment
+              included.
+            </p>
+            <ul class="list">
+              <li><strong>Be considerate with noise:</strong> set reasonable times and check local rules.</li>
+              <li><strong>Mind air quality:</strong> choose lights, diyas, and gatherings over heavy smoke.</li>
+              <li><strong>Use fire safely:</strong> keep lamps stable, never leave flames unattended, and keep water nearby.</li>
+              <li><strong>Include others:</strong> invite someone new, share a plate, or exchange a kind message.</li>
+            </ul>
+          </section>
+
+          <section id="faq" aria-label="Frequently asked questions">
+            <h2>FAQ</h2>
+            <details>
+              <summary>When is Diwali celebrated?</summary>
+              <p>
+                Diwali follows the lunar calendar, so the date changes each year. It usually falls in October or
+                November. Many communities celebrate across several days, with the main night commonly centered on
+                Lakshmi Puja.
+              </p>
+            </details>
+            <details>
+              <summary>What does “Deepavali” mean?</summary>
+              <p>
+                “Deepavali” is often translated as “a row of lamps,” reflecting the tradition of lighting diyas to
+                symbolize hope and guidance.
+              </p>
+            </details>
+            <details>
+              <summary>How can I wish someone a happy Diwali?</summary>
+              <p>
+                “Happy Diwali!” is perfect. You can also say “Shubh Diwali” (auspicious Diwali). If you’re writing a
+                message, a simple “Wishing you light, joy, and peace this Diwali” is always appreciated.
+              </p>
+            </details>
+            <details>
+              <summary>Is Diwali only one night?</summary>
+              <p>
+                Many people think of Diwali as a single evening, but in many traditions it’s a multi-day festival.
+                The exact structure can differ by region, family customs, and community.
+              </p>
+            </details>
+          </section>
+        </div>
+
+        <aside class="cards" aria-label="Side notes">
+          <section>
+            <h2>Quick facts</h2>
+            <ul class="list">
+              <li><strong>Also called:</strong> Deepavali</li>
+              <li><strong>Theme:</strong> light, renewal, gratitude</li>
+              <li><strong>Common symbols:</strong> diyas, rangoli, sweets</li>
+              <li><strong>Shared values:</strong> generosity, family, community</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>A simple at-home idea</h2>
+            <p>
+              Make a small rangoli with flowers or colored paper, light a diya (or a safe LED candle), and share a
+              sweet with someone—by visit, message, or delivery.
+            </p>
+            <p class="callout">
+              Small is meaningful: the point is warmth and connection, not perfection.
+            </p>
+          </section>
+
+          <section>
+            <h2>Pronunciation</h2>
+            <p>
+              Diwali is commonly pronounced “dee-WAH-lee.” Deepavali is commonly pronounced “dee-PAH-vuh-lee.”
+            </p>
+            <p>
+              If you’re unsure, it’s always okay to ask—most people appreciate the effort.
+            </p>
+          </section>
+
+          <section>
+            <h2>Page navigation</h2>
+            <p>
+              Use <span class="kbd">Tab</span> to move through links and open the FAQ. This page is a single file:
+              everything (text and styles) is included in the HTML.
+            </p>
+          </section>
+        </aside>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-card">
+        <div>
+          This page is a friendly overview of Diwali traditions that can vary by region, family, and faith
+          community. If you’re joining someone’s celebration, following their lead is the best way to be respectful.
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
